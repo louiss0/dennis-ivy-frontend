@@ -1,34 +1,52 @@
 
-# Project Commands 
 
-- This template is a docker-centric template that runs only using docker commands
 
-- Read the docker-compose yaml file to understand these commands  
+# React Template
 
-<br/>
 
-###  Start up the server
+This is called the react template it uses a series of scripts in order to help build a single page app.
+By default this template uses eslint, prettier for linting it uses windicss as it's css framework and typescript as it's type system.   
 
-```
-docker-compose up -d server 
-```
-<br/>
 
-### Build production image
+## Commands
 
-- Use the name of the project folder plus build as the image name . Ex 
-    ```
-    docker build -f ./docker-files/prod.dockerfile -t react-template-build    
-    ```
-
-```
-docker build -f ./docker-files/prod.dockerfile -t {{tag name}} 
-```
-<br/>
-
-### Run npm 
-```
-docker-compose run --rm npm   
+To start the server
+```json
+    "start": "webpack serve --config webpack.dev.js "
 ```
 
 
+To build for production 
+
+```json
+    "build": "webpack --config webpack.prod.js"
+```
+
+
+To lint files
+```json
+    "lint": "eslint --fix \"./src/**/*.{js,ts,tsx,jsx,json}\""
+```
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
