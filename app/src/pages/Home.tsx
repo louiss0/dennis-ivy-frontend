@@ -1,39 +1,25 @@
 import React, { FunctionComponent } from "react"
+import { Row } from "../components/Row"
 
-import reactIcon from "../assets/react_icon.png"
+import products from "../assets/products"
+import Product from "../components/Product"
 
 const Home: FunctionComponent = () => {
 	return (
-		<div className="mt-4">
-			<div className="flex flex-col items-center justify-between font-serif h-xl">
-				<h1 className="py-10 text-4xl ">This is the Home Page</h1>
-				<p
-					className="
-				transform
-				selection:(bg-gray-700 text-gray-300)
-				hover:text-gray-400"
-				>
-					This is react with {"  "}
-					<a
-						className="text-xl
-						border-b-2 border-current
-						hover:(text-gray-700 bg-gray-200)
-						active:(text-gray-800 bg-gray-300)"
-						href="https://windicss.org"
-					>
-						windi css
-					</a>
-				</p>
-
-				<div className="w-1/6 h-1/6 animate-ping animation-duration-75 animate-delay-75">
-					<img
-						src={reactIcon}
-						className="flex object-cover w-full h-full"
-						alt="React Icon"
-					/>
-				</div>
-			</div>
-			<footer />
+		<div>
+			<h1 className="text-bold text-xl">Latest Products</h1>
+			<ul>
+				<Row extraClasses="gap-6">
+					{products.map(product => (
+						<div
+							key={product.name}
+							className="sm:col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3"
+						>
+							<Product product={product} />
+						</div>
+					))}
+				</Row>
+			</ul>
 		</div>
 	)
 }
